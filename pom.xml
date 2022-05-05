@@ -59,7 +59,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>springboot-crud-k8s</finalName>
+			<finalName>springboot-crud-k8s</finalName>
 	</build>
 
 </project>
