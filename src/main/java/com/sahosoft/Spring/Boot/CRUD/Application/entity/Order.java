@@ -1,4 +1,4 @@
-package entity;
+package com.sahosoft.Spring.Boot.CRUD.Application.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

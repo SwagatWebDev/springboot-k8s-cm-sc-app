@@ -1,9 +1,9 @@
-package service;
+package com.sahosoft.Spring.Boot.CRUD.Application.service;
 
-import entity.Order;
+import com.sahosoft.Spring.Boot.CRUD.Application.entity.Order;
+import com.sahosoft.Spring.Boot.CRUD.Application.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.OrderRepository;
 
 import java.util.List;
 

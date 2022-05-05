@@ -1,9 +1,9 @@
-package controller;
+package com.sahosoft.Spring.Boot.CRUD.Application.controller;
 
-import entity.Order;
+import com.sahosoft.Spring.Boot.CRUD.Application.entity.Order;
+import com.sahosoft.Spring.Boot.CRUD.Application.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.OrderService;
 
 import java.util.List;
 
