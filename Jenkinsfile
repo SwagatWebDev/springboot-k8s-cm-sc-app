@@ -36,5 +36,12 @@ pipeline {
                 archiveArtifacts 'target/*.jar'
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                  sh 'docker build -t springboot-crud-k8s:1.0 .'
+                }
+            }
+        }
     }
 }
