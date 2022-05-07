@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo 'SpringBoot CRUD Application Project Maven Packaging'
                 sh "mvn package"
-                archiveArtifacts 'target/*.war'
+                archiveArtifacts 'target/*.jar'
             }
         }
     }
