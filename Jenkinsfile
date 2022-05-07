@@ -17,21 +17,21 @@ pipeline {
         }
         stage('Maven Compile') {
             steps {
-                echo 'SpringBoot CRUD Application Project Maven Compile'
+                echo 'SpringBoot CRUD Application Maven Compile'
                 // Run Maven on a Unix agent.
                 sh "mvn compile"
             }
         }
         stage('Maven Build') {
             steps {
-                echo 'SpringBoot CRUD Application Project Maven Build'
+                echo 'SpringBoot CRUD Application Maven Build'
                 // Run Maven on a Unix agent.
                 sh "mvn clean install"
             }
         }
         stage('Maven Packaging') {
             steps {
-                echo 'SpringBoot CRUD Application Project Maven Packaging'
+                echo 'SpringBoot CRUD Application Maven Packaging'
                 sh "mvn package"
                 archiveArtifacts 'target/*.jar'
             }
@@ -39,6 +39,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                  echo 'SpringBoot CRUD Application Build Docker Image'
                   sh 'docker build -t springboot-crud-k8s:1.0 .'
                 }
             }
