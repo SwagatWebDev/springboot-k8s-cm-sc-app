@@ -22,6 +22,13 @@ pipeline {
                 sh "mvn compile"
             }
         }
+        stage('Maven Build') {
+            steps {
+                echo 'SpringBoot CRUD Application Project Maven Build'
+                // Run Maven on a Unix agent.
+                sh "mvn clean install"
+            }
+        }
         stage('Maven Packaging') {
             steps {
                 echo 'SpringBoot CRUD Application Project Maven Packaging'
