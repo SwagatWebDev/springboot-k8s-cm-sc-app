@@ -40,7 +40,17 @@ pipeline {
             steps {
                 script {
                   echo 'SpringBoot CRUD Application Build Docker Image'
-                  sh 'docker build -t springboot-crud-k8s:1.0 .'
+                  sh 'docker build -t swagatkm/springboot-crud-k8s:1.0 .'
+                }
+            }
+        }
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                 withCredentials([string(credentialsId: 'swagatkm', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u swagatkm -p ${dockerhubpwd}'
+                 }  
+                 sh 'docker push swagatkm/springboot-crud-k8s:1.0'
                 }
             }
         }
