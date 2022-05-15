@@ -54,5 +54,19 @@ pipeline {
                 }
             }
         }
+        stage('Deploy on k8s') {
+            steps {
+                sshagent(['i-0469367f94dbe11a0']) {
+                sh "scp -o StrictHostKeyChecking=no app-deployment.yaml ubuntu@172.31.2.79:/home/ubuntu"
+                script {
+                  try{
+                      sh "ssh ubuntu@172.31.2.79 kubectl create -f ."
+                     }catch(error){
+                      sh "ssh ubuntu@172.31.2.79 kubectl create -f ."
+                     }
+                   }
+                }
+            }
+        }
     }
 }
