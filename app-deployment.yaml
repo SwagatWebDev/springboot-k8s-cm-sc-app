@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: springboot-crud-k8s
-          image: 120761001082.dkr.ecr.us-east-2.amazonaws.com/springboot-app
+          image: 120761001082.dkr.ecr.us-east-2.amazonaws.com/springboot-app:latest
           ports:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
